@@ -9,7 +9,9 @@
   }
 
   .preview {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-gap: 15px;
+    margin-bottom: 10px;
   }
 }
