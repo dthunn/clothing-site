@@ -3,7 +3,18 @@
   flex-direction: column;
   width: 380px;
 
+  @media only screen and (max-width: 950px) {
+    padding-top: 45px;
+  }
+
   .title {
     margin: 10px 0;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .btn-center {
+    display: flex;
+    justify-content: center;
   }
 }
