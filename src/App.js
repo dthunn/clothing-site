@@ -9,6 +9,7 @@ import ShopPage from './pages/shop/Shop';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/SignInAndSignUp';
 import Header from './components/header/Header';
 import CheckoutPage from './pages/checkout/Checkout';
+import Footer from './components/footer/Footer';
 
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { setCurrentUser } from './redux/user/userActions';
@@ -60,6 +61,7 @@ class App extends React.Component {
             }
           />
         </Switch>
+        <Footer />
       </div>
     );
   }
