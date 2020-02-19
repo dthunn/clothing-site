@@ -36,8 +36,19 @@
     }
 
     .option {
-      padding: 10px 15px;
+      padding: 8px 15px;
       cursor: pointer;
+      transition: all 0.3s;
+
+      &:hover {
+        background-color: rgb(235, 235, 235);
+        border-radius: 10px;
+      }
+
+      &:active {
+        color: #fff;
+        background-color: #ddd;
+      }
 
       @media only screen and (max-width: 750px) {
         padding: 10px 20px;
