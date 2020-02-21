@@ -10,6 +10,7 @@ import SignInAndSignUpPage from './pages/sign-in-and-sign-up/SignInAndSignUp';
 import Header from './components/header/Header';
 import CheckoutPage from './pages/checkout/Checkout';
 import Footer from './components/footer/Footer';
+import ErrorComponent from './components/error/error';
 
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { setCurrentUser } from './redux/user/userActions';
@@ -43,24 +44,27 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='site'>
         <Header />
-        <Switch>
-          <Route exact path='/' component={HomePage} />
-          <Route path='/shop' component={ShopPage} />
-          <Route exact path='/checkout' component={CheckoutPage} />
-          <Route
-            exact
-            path='/signin'
-            render={() =>
-              this.props.currentUser ? (
-                <Redirect to='/' />
-              ) : (
-                <SignInAndSignUpPage />
-              )
-            }
-          />
-        </Switch>
+        <div>
+          <Switch>
+            <Route exact path='/' component={HomePage} />
+            <Route path='/shop' component={ShopPage} />
+            <Route exact path='/checkout' component={CheckoutPage} />
+            <Route
+              exact
+              path='/signin'
+              render={() =>
+                this.props.currentUser ? (
+                  <Redirect to='/' />
+                ) : (
+                  <SignInAndSignUpPage />
+                )
+              }
+            />
+            <Route component={ErrorComponent} />; }
+          </Switch>
+        </div>
         <Footer />
       </div>
     );
